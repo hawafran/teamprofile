@@ -1,55 +1,43 @@
 const Employee = require('../lib/employee')
 
-describe('Employee', () =>{
-    it("should expect new Employee input", () => {
-        const Em = new Employee();
-        expect(typeof(Em)).toBe("object");
+
+
+    it("creates employee", () => {
+        const Em = new Employee('hawa', 2, 'hawa@test.com');
+        expect(Em.name).toEqual(expect.any(String));
+        expect(Em.id).toEqual(expect.any(Number));
+        expect(Em.email).toEqual(expect.any(String));
+        
     });
-    it("sets name via constructor"), () => {
-        const name = "hawa";
-        const Em = new Employee(name);
-        expect(Em.name).toBe(name);
-    };
-    it("sets ID via constructor"), () => {
-        const id = 1;
-        const Em = new Employee(id);
-        expect(Em.id).toBe(id);
-    };
-    it("sets email via constructor"), () => {
-        const email = "hawa@test.com";
-        const Em = new Employee(email);
-        expect(Em.email).toBe(email);
-    }
+
     describe ('getName', () => {
         it("retreives name via getName"), () => {
-            const name = "hawa";
-            const Em = new Employee(name);
-            expect(Em.getName()).toBe(name);
+            const Em = new Employee('hawa', 2, 'hawa@test.com');  
+            expect(Em.getName()).toEqual(expect.any(String));    
         };
     });
     describe ('getID', () => {
         it("retreives name via getID"), () => {
-            const id = 1;
-            const Em = new Employee(id);
-            expect(Em.getID()).toBe(id);
+            const Em = new Employee('hawa', 2, 'hawa@test.com');  
+            expect(Em.getID()).toEqual(expect.any(Number));    
         };
     });
     describe('getEmail', () => {
         it("retreives email via getEmail"), () => {
-            const email = "hawa@test.com";
-            const Em = new Employee(email);
-            expect(Em.getEmail()).toBe(email);
+            const Em = new Employee('hawa', 2, 'hawa@test.com');  
+            expect(Em.getEmail()).toBe(expect.any(String));
         };
 
     });
     describe('getRole', () => {
         it("should return 'employee"), () => {
-            const testValue = "Employee";
             const Em = new Employee("hawa", 1, "hawa@test.com");
-            expect(Em.getRole()).toBe(testValue);
+            expect(Em.getRole()).toBe("Employee");
         };
 
     });
-});
+    
+
+
 
 
