@@ -19,7 +19,7 @@ const addManager = () => {
         {
             type: 'input',
             name: 'name',
-            message: 'Who is the manager of this team?', 
+            message: 'Who is the manager?', 
             validate: nameInput => {
                 if (nameInput) {
                     return true;
@@ -200,7 +200,7 @@ const writeFile = data => {
             return;
        
         } else {
-            console.log("Your team profile has been successfully created! Please check out the index.html")
+            console.log("Your team profile has been created!")
         }
     })
 }; 
